@@ -15,4 +15,18 @@ $(document).ready(function (e){
          }
       })
    });
+   $("#tb").keyup(function (e){
+      e.preventDefault();
+      let action="Se busco el dato";
+      let dat=$(this).val();
+      $.ajax({
+         url:"",
+         type: "POST",
+         async: true,
+         data: { action: action,dat:dat},
+         success: function (response) {
+            alert(action+"//"+dat);
+         }
+      })
+   });
 });
