@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.model.ToDoList;
+import org.jboss.logging.Logger;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -12,7 +13,7 @@ import java.util.Set;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ToDoListService {
-
+    private Logger LOGGER = Logger.getLogger(ToDoListService.class);
     private Set<ToDoList> toDoLists = new HashSet<>();
 
     public ToDoListService() {
@@ -23,18 +24,20 @@ public class ToDoListService {
     @Path("/get")
     @GET
     public Set<ToDoList> list() {
-
+        LOGGER.info("Se mostro correctamente los datos");
         return toDoLists;
     }
     @Path("/post")
     @POST
     public Set<ToDoList> add(ToDoList element) {
+        LOGGER.info("Se añadio correctamente"+element);
         toDoLists.add(element);
         return toDoLists;
     }
     @Path("/delete")
     @DELETE
     public Set<ToDoList> delete(ToDoList element) {
+        LOGGER.info("Eliminación completa");
         toDoLists.removeIf(value -> value.getTitle().contentEquals(element.getTitle()));
         return toDoLists;
     }
@@ -43,6 +46,7 @@ public class ToDoListService {
     public Set<ToDoList> update(ToDoList element) {
         toDoLists.forEach(value -> {
             if (value.getTitle().equals(element.getTitle())) {
+                LOGGER.info("Actualización completa de la Descripción");
                 value.setDescription(element.getDescription());
             }
         });
@@ -53,6 +57,7 @@ public class ToDoListService {
     public Set<ToDoList> update1(ToDoList element){
         toDoLists.forEach(value ->{
             if (value.getTitle().equals(element.getTitle())) {
+                LOGGER.info("Actualización completa de estado");
                 value.setStade(element.getStade());
             }
         });
@@ -64,9 +69,10 @@ public class ToDoListService {
     public Set<ToDoList> busqueda(String title) {
         toDoLists.forEach(value ->{
             if(value.getTitle().equals(title)){
+                LOGGER.info("Busqueda completa"+title);
                 value.setTitle(title);
             }else {
-                System.out.println("1");
+                LOGGER.info("Error");
             }
         });
         return toDoLists;
