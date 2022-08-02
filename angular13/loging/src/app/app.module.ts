@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NavbarModule } from '@shared/navbar/navbar.module';
+import { NavbarModule } from 'src/app/shared/navbar/navbar.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

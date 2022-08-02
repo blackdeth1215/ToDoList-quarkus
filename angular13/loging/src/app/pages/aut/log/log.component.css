@@ -30,10 +30,10 @@
     padding-top: 9px;
     width: 410px;
     height: 380px;
-    color: #66666600;
+    color: #666666;
     margin: 22px auto;
     margin-top: 0;
-    border: #68686800 5px solid;
+    border: #686868 5px solid;
     border-radius: 20px;
 }
 
@@ -42,34 +42,4 @@
     font-size: 40;
     color: #002C94;
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
-}
-
-.btc {
-    padding: 2px;
-    color: #fff;
-    background: #0098cb;
-    width: 200px;
-    margin: 2px auto;
-    margin-top: 0;
-    border: 0;
-    border-radius: 23px;
-    cursor: pointer;
-    display: block;
-    text-decoration: none;
-    text-align: center;
-}
-
-.btc:hover {
-    padding: 2px;
-    color: #fff;
-    background: #044d66;
-    width: 200px;
-    margin: 2px auto;
-    margin-top: 0;
-    border: 0;
-    border-radius: 23px;
-    cursor: pointer;
-    display: block;
-    text-decoration: none;
-    text-align: center;
 }

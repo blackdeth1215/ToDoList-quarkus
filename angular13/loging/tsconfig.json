@@ -5,7 +5,6 @@
     "paths": {
       "@home/*":["src/app/pages/home/*"],
       "@aut/*":["src/app/pages/aut/*"],
-      "@shared":["src/app/shared/*"],
       "@env":["src/env/*"]
     },
     "baseUrl": "./",

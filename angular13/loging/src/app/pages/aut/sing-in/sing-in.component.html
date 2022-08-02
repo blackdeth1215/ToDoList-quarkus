@@ -1,1 +1,12 @@
-<p>sing-in works!</p>
+<section id="container">
+    <div class="log">
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="inisec">
+            <h3 class="headini">Iniciar Sessión</h3>
+            <input type="text" formControlName="email" required placeholder="Correo electronico" class="btch">
+            <input type="password" name="clave" required placeholder="Contraseña" class="btch">
+            <input type="password" formControlName="passw" required placeholder="Confirmar Contraseña" class="btch">
+            <input type="submit" class="btnch" value="Ingresar">
+            <a [routerLink]="['/sing-up']" class="btc">Crear una cuenta</a>
+        </form>
+    </div>
+</section>
