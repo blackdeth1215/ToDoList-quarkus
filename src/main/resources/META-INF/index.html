@@ -5,11 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test de código</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jsajax/ajax.js"></script>
+    <link href="jsajax/css.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
-    hola
+<h1 class="tt">tabla de datos</h1>
 </body>
+<input type="text" class="bus" id="tb" placeholder="Buscar titulo">
+<table border=1 class='tabla_datos'>
+    <thead>
+    <tr id='titulo'>
+    <td>Titulo</td>
+    <td>Descripción</td>
+    <td>Tipo</td>
+    <td>Acciones</td>
+    </tr>
+
+    </thead>
+
+    <tbody>
+    </tr>
+    </tbody>
+    <tr>
+        <td contenteditable id="tit"> </td>
+        <td contenteditable id="des"> </td>
+        <td contenteditable id="tip"> </td>
+        <td><a id="ad" class="bta">Añadir</a></td>
+    </tr>
+</table>
 
 </html>
