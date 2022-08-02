@@ -15,6 +15,23 @@ $(document).ready(function (e){
          }
       })
    });
+   $('#el').click(function (e){
+      e.preventDefault();
+      let action ='datos Eliminados:';
+      let tit=$("#tt").text();
+      let des=$("#dt").text();
+      let tip=$("#et").text();
+      $.ajax({
+         url:"",
+         type: "POST",
+         async: true,
+         data: { action: action,tit:tit,des:des,tip:tip},
+         success: function (response) {
+            alert(action+tit+"/"+des+"/"+tip);
+         }
+      })
+   });
+   
    $("#tb").keyup(function (e){
       e.preventDefault();
       let action="Se busco el dato";
@@ -29,4 +46,5 @@ $(document).ready(function (e){
          }
       })
    });
+
 });
