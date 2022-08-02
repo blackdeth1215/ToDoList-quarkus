@@ -2,13 +2,8 @@ package org.example.service;
 
 import org.example.model.ToDoList;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.transaction.Transactional;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,11 +14,11 @@ import java.util.Set;
 public class ToDoListService {
 
     private Set<ToDoList> toDoLists = new HashSet<>();
-    
+
     public ToDoListService() {
-        toDoLists.add(new ToDoList("Test1", "desc test1"));
-        toDoLists.add(new ToDoList("Test2", "desc test2"));
-        toDoLists.add(new ToDoList("Test3", "desc test3"));
+        toDoLists.add(new ToDoList("Test1", "desc test1","done"));
+        toDoLists.add(new ToDoList("Test2", "desc test2","incomplete"));
+        toDoLists.add(new ToDoList("Test3", "desc test3","done"));
     }
     @Path("/get")
     @GET
@@ -49,6 +44,29 @@ public class ToDoListService {
         toDoLists.forEach(value -> {
             if (value.getTitle().equals(element.getTitle())) {
                 value.setDescription(element.getDescription());
+            }
+        });
+        return toDoLists;
+    }
+    @Path("/stade")
+    @PUT
+    public Set<ToDoList> update1(ToDoList element){
+        toDoLists.forEach(value ->{
+            if (value.getTitle().equals(element.getTitle())) {
+                value.setStade(element.getStade());
+            }
+        });
+        return toDoLists;
+    }
+    @Path("{title}")
+    @GET
+    @Transactional
+    public Set<ToDoList> busqueda(String title) {
+        toDoLists.forEach(value ->{
+            if(value.getTitle().equals(title)){
+                value.setTitle(title);
+            }else {
+                System.out.println("1");
             }
         });
         return toDoLists;
