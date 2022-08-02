@@ -31,7 +31,45 @@ $(document).ready(function (e){
          }
       })
    });
-   
+   $("#tt").blur(function (){
+      let tit=$(this).text();
+      let action="se modifico el dato:";
+      $.ajax({
+         url:"",
+         type: "POST",
+         async: true,
+         data: { action: action,tit:tit},
+         success: function (response) {
+            alert(action+tit);
+         }
+      })
+   });
+   $("#dt").blur(function (){
+      let dt=$(this).text();
+      let action="se modifico el dato:";
+      $.ajax({
+         url:"",
+         type: "POST",
+         async: true,
+         data: { action: action,dt:dt},
+         success: function (response) {
+            alert(action+dt);
+         }
+      })
+   });
+   $("#et").blur(function (){
+      let et=$(this).text();
+      let action="se modifico el dato:";
+      $.ajax({
+         url:"",
+         type: "POST",
+         async: true,
+         data: { action: action,et:et},
+         success: function (response) {
+            alert(action+et);
+         }
+      })
+   });
    $("#tb").keyup(function (e){
       e.preventDefault();
       let action="Se busco el dato";
